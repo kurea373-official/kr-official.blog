@@ -220,10 +220,15 @@ body{
 }
 
 .modern-card:hover {
-    transform: translateY(-4px) scale(1.005);
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 40px 80px rgba(2, 132, 199, 0.1);
+    transform: translateY(-4px);
+
+    background: rgba(28, 28, 28, 0.82);
+
+    border-color: rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45),
+        0 0 15px rgba(212,175,55,.18);
 }
 
 /* カード上部の青色箔押しライン */
