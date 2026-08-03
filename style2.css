@@ -1,0 +1,225 @@
+/* ======================================
+   APPLE TEA - BLACKJACK THEME
+====================================== */
+
+:root{
+
+    --casino-gold:#d4af37;
+    --casino-gold-light:#f5d36a;
+
+    --bg:#090909;
+    --card:#181818;
+    --card-hover:#222;
+
+    --text:#f5f5f5;
+    --sub:#a6a6a6;
+
+    --border:rgba(212,175,55,.18);
+
+}
+
+/* ---------- body ---------- */
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,
+    #2d2d2d,
+    #161616 45%,
+    #090909);
+
+}
+
+/* ---------- メインカード ---------- */
+
+#gameArea{
+
+    width:min(92vw,760px);
+
+    padding:36px;
+
+    border-radius:26px;
+
+    background:rgba(18,18,18,.82);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.45);
+
+}
+
+/* ---------- タイトル ---------- */
+
+h1{
+
+    margin-top:0;
+
+    color:var(--casino-gold);
+
+    text-align:center;
+
+    letter-spacing:.25em;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,.18);
+
+}
+
+/* ---------- ステータス ---------- */
+
+#gameStatus{
+
+    margin:20px 0;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+/* ---------- 手札 ---------- */
+
+.hand{
+
+    margin:18px 0;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(212,175,55,.10);
+
+    color:var(--text);
+
+}
+
+/* ---------- ボタン ---------- */
+
+button{
+
+    padding:12px 28px;
+
+    margin:8px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    background:rgba(22,22,22,.82);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+button:hover{
+
+    background:rgba(212,175,55,.08);
+
+    border-color:rgba(212,175,55,.35);
+
+    transform:translateY(-2px);
+
+}
+
+button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}
+
+/* ---------- スコア ---------- */
+
+#scoreboard{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    margin:24px 0;
+
+    color:var(--casino-gold-light);
+
+    font-weight:600;
+
+}
+
+/* ---------- テーブル ---------- */
+
+#resultTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:24px;
+
+}
+
+#resultTable th{
+
+    background:linear-gradient(
+    135deg,
+    #f5d36a,
+    #b98a19);
+
+    color:#111;
+
+    padding:12px;
+
+}
+
+#resultTable td{
+
+    padding:12px;
+
+    background:rgba(255,255,255,.03);
+
+    color:var(--text);
+
+    border-bottom:1px solid rgba(212,175,55,.08);
+
+}
+
+/* ---------- スクロールバー ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#6e5314;
+
+    border-radius:20px;
+
+}
