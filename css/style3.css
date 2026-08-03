@@ -1,4 +1,28 @@
 /* 背景 */
+
+/* ==========================================
+   Apple Tea Studio - Othello Theme
+========================================== */
+
+:root{
+    --primary: #d4af37;
+    --primary-light: #f5d36a;
+
+    --bg-main: #090909;
+    --bg-sub: #161616;
+
+    --card: rgba(22,22,22,.82);
+
+    --text: #f5f5f5;
+    --text-sub: #bdbdbd;
+
+    --border: rgba(212,175,55,.18);
+
+    --hover: rgba(212,175,55,.08);
+
+    --shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+
 body {
     font-family: "Noto Sans JP", sans-serif;
     background:
