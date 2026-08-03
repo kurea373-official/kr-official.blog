@@ -222,13 +222,12 @@ body{
 .modern-card:hover {
     transform: translateY(-4px);
 
-    background: rgba(28, 28, 28, 0.82);
+    background: rgba(212, 175, 55, 0.06);
 
-    border-color: rgba(212, 175, 55, 0.35);
+    border-color: rgba(212, 175, 55, 0.22);
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.45),
-        0 0 15px rgba(212,175,55,.18);
+        0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* カード上部の青色箔押しライン */
