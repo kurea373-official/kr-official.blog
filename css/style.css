@@ -7,39 +7,57 @@
     box-sizing: border-box;
 }
 
-:root {
-    /* ── あの卒業記念「青色銀テープ」の眩しい輝きを再現したメタリックグラデーション ── */
-    --tea-gradient: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 20%, #0284c7 40%, #0369a1 55%, #0c4a6e 70%, #38bdf8 85%, #e0f2fe 100%);
-    /* 特典の箔押し感を強調する高輝度ネオンブルー */
-    --tea-primary: #00d2ff;
-    /* メタルプレートに深く刻まれた文字をイメージしたシャープな紺黒 */
-    --tea-text: #0b1329;
-    --tea-sub: #0284c7;
-    
-    /* ミントベースの水色を極薄のグラスレイヤーとしてブレンド */
-    --glass-body: rgba(224, 242, 254, 0.4);
-    --glass-card: rgba(255, 255, 255, 0.75);
-    /* 枠線を銀テープの鋭いエッジのようにクリアに */
-    --glass-border: rgba(56, 189, 248, 0.25);
-    
-    --font-en: 'Plus Jakarta Sans', sans-serif;
-    --font-ja: 'Noto Sans JP', sans-serif;
-    
-    /* 青色リフレクションに合わせた、引き締まったプレミアムシャドウ */
-    --premium-shadow: 0 30px 60px rgba(2, 132, 199, 0.05), 0 4px 12px rgba(56, 189, 248, 0.02);
-    /* 箔押しの立体感（エンボス）を演出する内側のハイライト */
-    --inner-glow: inset 0 2px 0px rgba(255, 255, 255, 0.95), inset 0 -1px 0px rgba(2, 132, 199, 0.1);
+:root{
+
+    /* ===== Luxury Black Gold ===== */
+
+    --gold-gradient: linear-gradient(
+        135deg,
+        #fff6c8 0%,
+        #f5d36a 20%,
+        #d4af37 55%,
+        #8f6b10 100%
+    );
+
+    --primary: #d4af37;
+    --primary-light: #f3d87a;
+
+    --text-main: #f5f5f5;
+    --text-sub: #b8b8b8;
+
+    --glass-body: rgba(22,22,22,.78);
+    --glass-card: rgba(28,28,28,.72);
+    --glass-border: rgba(212,175,55,.18);
+
+    --font-en:'Plus Jakarta Sans',sans-serif;
+    --font-ja:'Noto Sans JP',sans-serif;
+
+    --premium-shadow:
+        0 25px 60px rgba(0,0,0,.55);
+
+    --inner-glow:
+        inset 0 1px 0 rgba(255,255,255,.05);
 }
 
-body {
-    /* 銀テープが舞うステージの光をイメージした、透明感あるミント＆アクアの背景 */
-    background: radial-gradient(circle at 50% 0%, #f0fdfa 0%, #e0f2fe 50%, #bae6fd 100%);
-    color: var(--tea-text);
-    font-family: var(--font-en), var(--font-ja);
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding: 40px 24px 120px 24px;
-    letter-spacing: 0.03em;
+body{
+
+    background:
+    radial-gradient(circle at top,
+    #2d2d2d 0%,
+    #161616 40%,
+    #090909 100%);
+
+    color: var(--text-main);
+
+    font-family: var(--font-en),var(--font-ja);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    padding:40px 24px 120px;
+
+    letter-spacing:.03em;
 }
 
 /* ライブ会場で舞い踊る銀テープのきらめきをイメージしたバブル（リフレクション） */
@@ -82,16 +100,16 @@ body {
    FLOATING GLASS HEADER
    ======================================== */
 .glass-header {
-    background: var(--glass-body);
+    background: rgba(18,18,18,.85);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(212,175,55,.18);
     border-radius: 24px;
     padding: 14px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: var(--inner-glow), var(--premium-shadow);
+    box-shadow: 0 20px 45px rgba(0,0,0,.5);
     margin-bottom: 40px;
 }
 
@@ -124,10 +142,11 @@ body {
 .top-nav {
     display: flex;
     gap: 4px;
-    background: rgba(56, 189, 248, 0.08);
     padding: 4px;
     border-radius: 16px;
-    border: 1px solid rgba(56, 189, 248, 0.12);
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(212,175,55,.12);
+  
 }
 
 .top-nav a {
@@ -142,15 +161,17 @@ body {
 }
 
 .top-nav a:hover {
-    color: var(--tea-primary);
-    background: rgba(255, 255, 255, 0.6);
+    color:#ffd86b;
+    background:rgba(212,175,55,.08);
 }
 
 /* アクティブタブ：鮮やかな青色銀テープの質感をそのまま流し込んだデザイン */
 .top-nav a.active {
-    color: #ffffff;
-    background: var(--tea-gradient);
-    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35), var(--inner-glow);
+    .top-nav a.active {
+    color: #111;
+    background: var(--gold-gradient);
+    box-shadow: 0 0 18px rgba(212,175,55,.35);
+}
     font-weight: 700;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -186,16 +207,16 @@ body {
 }
 
 .modern-card {
-    background: var(--glass-card);
+    background: rgba(20,20,20,.78);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(212,175,55,.18);
     border-radius: 24px;
     padding: 30px;
-    box-shadow: var(--inner-glow), var(--premium-shadow);
+    box-shadow: 0 25px 60px rgba(0,0,0,.55);
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all .4s cubic-bezier(.16,1,.3,1);
 }
 
 .modern-card:hover {
@@ -212,7 +233,7 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: var(--tea-gradient);
+    background:var(--gold-gradient);
 }
 
 .stream-banner {
@@ -221,14 +242,15 @@ body {
 }
 
 .stream-banner h2 {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--tea-text);
+    color: #f4d46b;
+    text-shadow: 0 0 12px rgba(212,175,55,.25);
+    letter-spacing: .06em;
 }
 
 .stream-banner p {
     font-size: 13px;
-    color: var(--tea-sub);
+    color: #9d9d9d;
+    font-weight: 500;
     margin-top: 4px;
 }
 
@@ -250,33 +272,60 @@ body {
 .avatar-tea {
     width: 44px;
     height: 44px;
-    background: var(--tea-gradient);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 16px;
-    border-radius: 14px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.2), var(--inner-glow);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    background: linear-gradient(
+        135deg,
+        #fff5c3 0%,
+        #e5c35c 35%,
+        #c89a28 70%,
+        #8d6712 100%
+    );
+
+    color: #111;
+    font-size: 16px;
+    font-weight: 800;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 0 18px rgba(212, 175, 55, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+    transition: all 0.3s ease;
+
+    .avatar-tea:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    box-shadow:
+        0 0 28px rgba(212, 175, 55, 0.6),
+        0 12px 28px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
 }
 
 .meta-info h3 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--tea-text);
+    color: #f3d87a;
+    font-size: 16px;
+    letter-spacing: .05em;
 }
 
 .meta-info span {
-    font-size: 12px;
-    color: var(--tea-sub);
+    color: #8f8f8f;
+    font-size: 11px;
 }
 
 .post-body {
+   color: #dddddd;
     font-size: 14px;
-    line-height: 1.75;
-    color: var(--tea-text);
+    line-height: 1.9;
     text-align: justify;
 }
 
@@ -290,8 +339,8 @@ body {
 .side-widget h4 {
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 0.15em;
-    color: var(--tea-sub);
+   color: #d4af37;
+    letter-spacing: .2em;
     margin-bottom: 18px;
     border-left: 3px solid var(--tea-sub);
     padding-left: 8px;
