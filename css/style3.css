@@ -1,0 +1,139 @@
+/* 背景 */
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background:
+        radial-gradient(circle at top,
+        #2b2b2b 0%,
+        #151515 45%,
+        #080808 100%);
+    color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ゲーム全体 */
+#gameArea {
+    margin: 40px auto;
+    padding: 30px;
+    width: 350px;
+
+    background: rgba(22,22,22,.82);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(212,175,55,.18);
+    border-radius: 20px;
+
+    box-shadow:
+        0 16px 35px rgba(0,0,0,.45);
+}
+
+/* タイトル */
+h1{
+    color:#d4af37;
+    letter-spacing:.15em;
+    text-shadow:
+        0 0 12px rgba(212,175,55,.25);
+}
+
+/* ステータス */
+#gameStatus{
+    color:#f5f5f5;
+}
+
+/* 手札 */
+.hand{
+
+    color:#d7d7d7;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(212,175,55,.08);
+
+    border-radius:14px;
+
+    padding:12px;
+
+    margin-top:15px;
+}
+
+/* ボタン共通 */
+button{
+
+    padding:10px 24px;
+
+    margin:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:rgba(28,28,28,.9);
+
+    color:#f5f5f5;
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.25s;
+}
+
+button:hover{
+
+    background:rgba(212,175,55,.08);
+
+    border-color:rgba(212,175,55,.35);
+
+    transform:translateY(-2px);
+}
+
+/* ボタン色を統一 */
+#hitButton,
+#standButton,
+#resetButton,
+#restartButton{
+
+    background:rgba(28,28,28,.9);
+}
+
+/* スコア */
+#scoreboard{
+
+    margin-top:20px;
+
+    color:#e5c35c;
+}
+
+/* 結果テーブル */
+#resultTable{
+
+    margin-top:20px;
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+#resultTable th{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff5c3,
+    #d4af37,
+    #8d6712);
+
+    color:#111;
+
+    padding:10px;
+}
+
+#resultTable td{
+
+    background:rgba(255,255,255,.03);
+
+    color:#f5f5f5;
+
+    border:1px solid rgba(212,175,55,.12);
+
+    padding:10px;
+}
