@@ -5,101 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>numenical reasoning</title>
     <style>
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        th {
-            background-color: #00AC9A;
-        }
-    button {
-      background-color: #009999; /* 青緑色 */
-      color: #000000;
-      padding: 8px 16px; /* パディングを小さく */
-  font-size: 14px; 
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      
-      margin: 0.1px;
-      cursor: pointer;
-    }
+     /* =====================
+   数独 テーブル
+===================== */
 
- .site-footer{
+table {
 
-    margin-top:60px;
+    width:50%;
 
-    width:100%;
+    border-collapse:collapse;
 
-    padding:35px 20px;
+    margin-top:20px;
+
+    color:#f5f5f5;
+
+}
+
+
+th, td {
+
+    padding:10px;
+
+    border:1px solid rgba(212,175,55,0.4);
 
     text-align:center;
 
+}
+
+
+th {
+
+    background:#1a1505;
+
+    color:#d4af37;
+
+}
+
+
+
+/* =====================
+   ボタン 黒金
+===================== */
+
+
+button {
+
+    background:#d4af37;
+
+    color:#090909;
+
+    padding:8px 16px;
+
+    font-size:14px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    margin:5px;
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+button:hover {
+
+    background:#f5d36a;
+
+    box-shadow:
+
+    0 0 12px rgba(212,175,55,0.6);
+
+}
+
+
+
+/* =====================
+   共通フッター
+===================== */
+
+
+.site-footer {
+
+
+    margin-top:60px;
+
+
+    width:100%;
+
+
+    padding:35px 20px;
+
+
+    text-align:center;
+
+
     box-sizing:border-box;
+
 
     color:#fff;
 
+
 }
 
-.footer-inner{
+
+
+.footer-inner {
+
 
     max-width:1100px;
 
+
     margin:auto;
+
 
 }
 
-.footer-divider{
+
+
+.footer-divider {
+
 
     width:90px;
 
+
     height:2px;
+
 
     margin:20px auto;
 
 }
 
-.footer-title{
+
+
+.footer-title {
 
     margin-top:8px;
 
+    color:#d4af37;
+
 }
 
-.footer-message{
+
+
+.footer-message {
 
     margin:15px 0;
 
+    color:#ddd;
+
 }
 
-.footer-inner small{
+
+
+.footer-inner small {
 
     display:block;
 
     line-height:1.8;
 
+    color:#aaa;
+
 }
 
-.number-footer{
+
+
+/* =====================
+   数独フッター 黒金
+===================== */
+
+
+.number-footer {
+
 
     background:
-    linear-gradient(180deg,#009688,#00695c);
 
-    border-top:2px solid #5df2a5;
+    linear-gradient(
+        180deg,
+        #161616,
+        #050505
+    );
+
+
+    border-top:
+
+    2px solid #d4af37;
+
 
 }
 
-.number-footer .footer-divider{
 
-    background:#5df2a5;
+
+.number-footer .footer-divider {
+
+
+    background:#d4af37;
+
 
 }
-
         
     </style>
 </head>
