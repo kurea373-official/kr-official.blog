@@ -7,9 +7,27 @@
     <style>
 
         
- body{
+:root{
 
-    font-family:"Segoe UI",Arial,sans-serif;
+    --casino-gold:#d4af37;
+    --casino-gold-light:#f5d36a;
+
+    --bg:#090909;
+    --card:#181818;
+    --card-hover:#222;
+
+    --text:#f5f5f5;
+    --sub:#a6a6a6;
+
+    --border:rgba(212,175,55,.18);
+
+}
+
+/* ---------- body ---------- */
+
+body{
+
+    margin:0;
 
     min-height:100vh;
 
@@ -17,20 +35,14 @@
 
     flex-direction:column;
 
-    align-items:center;
-
     background:
-    radial-gradient(
-        circle at top,
-        #2d2d2d,
-        #161616 45%,
-        #090909);
-
-    color:var(--text);
-
-    padding:40px 20px;
+    radial-gradient(circle at top,
+    #2d2d2d,
+    #161616 45%,
+    #090909);
 
 }
+
 
 /* タイトル */
 h1 {
