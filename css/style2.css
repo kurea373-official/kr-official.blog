@@ -28,9 +28,7 @@ body{
 
     display:flex;
 
-    justify-content:center;
-
-    align-items:center;
+    flex-direction:column;
 
     background:
     radial-gradient(circle at top,
@@ -40,11 +38,14 @@ body{
 
 }
 
+
 /* ---------- メインカード ---------- */
 
 #gameArea{
 
     width:min(92vw,760px);
+
+    margin:50px auto;
 
     padding:36px;
 
@@ -60,7 +61,6 @@ body{
         0 18px 45px rgba(0,0,0,.45);
 
 }
-
 /* ---------- タイトル ---------- */
 
 h1{
@@ -227,12 +227,19 @@ button:disabled{
 
 .blackjack-footer{
 
+    margin-top:auto;
+
+    width:100%;
+
     background:
     linear-gradient(180deg,#18130a,#090909);
 
     color:#f5e3a2;
 
     border-top:2px solid #d4af37;
+
+    padding:25px 0;
+
 }
 
 .blackjack-footer .footer-divider{
