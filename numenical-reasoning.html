@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>numenical reasoning</title>
     <style>
-     /* =====================
-   数独 テーブル
-===================== */
+
+/*==================================================
+ Apple Tea Studio
+ Number Guess Collection
+ Part1
+==================================================*/
+
+/*==============================
+  Color Theme
+==============================*/
+
 :root{
 
-    --casino-gold:#d4af37;
-    --casino-gold-light:#f5d36a;
+    --gold:#d4af37;
+    --gold-light:#f5d36a;
 
     --bg:#090909;
+    --bg2:#161616;
     --card:#181818;
-    --card-hover:#222;
+    --card-hover:#232323;
 
     --text:#f5f5f5;
-    --sub:#a6a6a6;
+    --sub:#a8a8a8;
 
     --border:rgba(212,175,55,.18);
 
 }
 
-/* ---------- body ---------- */
+/*==============================
+ Reset
+==============================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+/*==============================
+ Body
+==============================*/
 
 body{
 
-    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
 
     min-height:100vh;
 
@@ -36,136 +61,323 @@ body{
 
     flex-direction:column;
 
-    background:
-    radial-gradient(circle at top,
-    #2d2d2d,
-    #161616 45%,
-    #090909);
-
-}
-
-        
-table {
-
-    width:50%;
-
-    border-collapse:collapse;
-
-    margin-top:20px;
-
-    color:#f5f5f5;
-
-}
-
-
-th, td {
-
-    padding:10px;
-
-    border:1px solid rgba(212,175,55,0.4);
-
-    text-align:center;
-
-}
-
-
-th {
-
-    background:#1a1505;
-
-    color:#d4af37;
-
-}
-
-
-
-/* =====================
-   ボタン 黒金
-===================== */
-
-
-button {
-
-    background:#d4af37;
-
-    color:#090909;
-
-    padding:8px 16px;
-
-    font-size:14px;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    display:inline-block;
-
-    margin:5px;
-
-    cursor:pointer;
-
-    border:none;
-
-    border-radius:5px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-
-button:hover {
-
-    background:#f5d36a;
-
-    box-shadow:
-
-    0 0 12px rgba(212,175,55,0.6);
-
-}
-
-
-
-/* =====================
-   共通フッター
-===================== */
-
-
-        .guess-card {
-
-    width:350px;
-
-    padding:35px;
-
+    align-items:center;
 
     background:
 
-    rgba(18,18,18,.82);
+    radial-gradient(
+        circle at top,
+        #2d2d2d,
+        #161616 45%,
+        #090909
+    );
 
+    color:var(--text);
 
-    backdrop-filter:blur(20px);
+    padding:40px 20px;
 
+}
+
+/*==============================
+ Title
+==============================*/
+
+h1{
+
+    color:var(--gold);
+
+    font-size:42px;
+
+    letter-spacing:.12em;
+
+    margin-bottom:10px;
+
+    text-shadow:
+
+    0 0 15px rgba(212,175,55,.25);
+
+}
+
+/*==============================
+ Subtitle
+==============================*/
+
+body>p:first-of-type{
+
+    color:var(--sub);
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+}
+
+/*==============================
+ Number Input
+==============================*/
+
+#userGuess{
+
+    width:240px;
+
+    height:55px;
+
+    background:#111;
 
     border:
 
-    1px solid rgba(212,175,55,.18);
+    1px solid rgba(212,175,55,.35);
 
+    border-radius:12px;
 
-    border-radius:22px;
+    color:white;
 
+    font-size:22px;
+
+    text-align:center;
+
+    outline:none;
+
+    transition:.3s;
+
+    margin-right:12px;
+
+}
+
+#userGuess:focus{
+
+    border-color:var(--gold);
 
     box-shadow:
 
-    0 18px 45px rgba(0,0,0,.45);
+    0 0 15px rgba(212,175,55,.35);
 
 }
-        
 
+/*==============================
+ Buttons
+==============================*/
 
-/* =====================
-   数独フッター 黒金
-===================== */
+button{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color:#111;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:13px 24px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:
+
+    translateY(-2px);
+
+    box-shadow:
+
+    0 8px 20px rgba(212,175,55,.35);
+
+}
+
+/*==============================
+ Link
+==============================*/
+
+a{
+
+    color:var(--gold-light);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+a:hover{
+
+    color:white;
+
+}
+
+/*==============================
+ Result Title
+==============================*/
+
+h2{
+
+    color:var(--gold);
+
+    margin-top:45px;
+
+    margin-bottom:15px;
+
+}
+
+/*==============================
+ Tables
+==============================*/
+
+table{
+
+    width:min(900px,90%);
+
+    border-collapse:collapse;
+
+    background:
+
+    rgba(20,20,20,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+    1px solid rgba(212,175,55,.2);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.35);
+
+}
+
+th{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #2d2308,
+        #171105
+    );
+
+    color:var(--gold);
+
+    padding:16px;
+
+    font-size:15px;
+
+}
+
+td{
+
+    padding:15px;
+
+    text-align:center;
+
+    color:white;
+
+    border-top:
+
+    1px solid rgba(212,175,55,.08);
+
+}
+
+tr:hover{
+
+    background:
+
+    rgba(212,175,55,.05);
+
+}
+/*==================================================
+ Apple Tea Studio
+ Number Guess Collection
+ Part2
+==================================================*/
+
+/*==============================
+ Previous Result Table
+==============================*/
+
+#previousResultsTable{
+
+    margin-top:30px;
+
+    display:none;
+
+}
+
+/*==============================
+ Input Animation
+==============================*/
+
+#userGuess::placeholder{
+
+    color:#777;
+
+}
+
+#userGuess:hover{
+
+    border-color:var(--gold);
+
+}
+
+/*==============================
+ Game Buttons
+==============================*/
+
+strong{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+strong button{
+
+    min-width:220px;
+
+}
+
+/*==============================
+ Table Animation
+==============================*/
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    transform:scale(1.01);
+
+}
+
+/*==============================
+ Scrollbar
+==============================*/
 
 ::-webkit-scrollbar{
 
@@ -173,274 +385,193 @@ button:hover {
 
 }
 
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
 
 ::-webkit-scrollbar-thumb{
 
-    background:#6e5314;
+    background:linear-gradient(
+        180deg,
+        var(--gold-light),
+        var(--gold)
+    );
 
     border-radius:20px;
 
 }
 
+/*==============================
+ Footer
+==============================*/
 
+.site-footer{
 
-.number-footer{
-
-    margin-top:auto;
+    margin-top:70px;
 
     width:100%;
 
+    padding:40px 20px;
+
+    text-align:center;
 
     background:
 
     linear-gradient(
         180deg,
-        #18130a,
+        #1a1408,
         #090909
     );
 
-
-    color:#f5e3a2;
-
-
-    /* bodyとの境界線 */
-    border-top:
-
-    3px solid #d4af37;
-
+    border-top:2px solid var(--gold);
 
     box-shadow:
 
-    0 -8px 25px rgba(212,175,55,.18);
-
-
-    padding:35px 0;
+        0 -10px 25px rgba(0,0,0,.45);
 
 }
 
+.footer-inner{
 
-/* フッター内文字 */
-
-.number-footer h2{
-
-    color:#f5d36a;
-
-}
-
-
-
-.number-footer .footer-title{
-
-    color:#e8c968;
-
-}
-
-
-
-.number-footer .footer-message{
-
-    color:#f5e3a2;
-
-}
-
-
-
-.number-footer small{
-
-    color:#c8b77a;
-
-}
-
-
-
-.number-footer .footer-divider{
-
-    background:#d4af37;
-
-}
-
-
-
-.number-footer a{
-
-    color:#f5d36a;
-
-    text-decoration:none;
-
-}
-
-
-
-.number-footer a:hover{
-
-    color:#fff1a8;
-
-}
-
-}
-
-/* =====================
- 数当てゲーム本体
-===================== */
-
-
-.number-game{
-
-    width:100%;
-
-}
-
-
-
-.subtitle{
-
-    color:#aaa;
-
-    margin-bottom:30px;
-
-}
-
-
-
-.guess-card{
-
-    width:350px;
+    max-width:1100px;
 
     margin:auto;
 
-    padding:30px;
+}
 
+.footer-inner h2{
 
-    background:
+    color:var(--gold);
 
-    rgba(20,20,20,.85);
+    font-size:30px;
 
+    letter-spacing:.08em;
 
-    border:
+    margin-bottom:8px;
 
-    1px solid rgba(212,175,55,.3);
+}
 
+.footer-title{
 
-    border-radius:18px;
+    color:#d7c68d;
 
+    margin-bottom:18px;
 
-    box-shadow:
+}
 
-    0 0 30px rgba(212,175,55,.15);
+.footer-divider{
+
+    width:90px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:22px auto;
+
+}
+
+.footer-message{
+
+    color:#f5f5f5;
+
+    margin-bottom:20px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+
+}
+
+.footer-links a{
+
+    color:var(--gold-light);
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.footer-links a:hover{
+
+    color:white;
+
+    text-shadow:
+
+        0 0 10px rgba(212,175,55,.5);
+
+}
+
+.footer-inner small{
+
+    color:#9f9f9f;
+
+    line-height:1.8;
+
+}
+
+/*==============================
+ Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:32px;
+
+    }
+
+    #userGuess{
+
+        width:100%;
+
+        margin:0 0 15px 0;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    strong{
+
+        flex-direction:column;
+
+    }
+
+    strong button{
+
+        width:100%;
+
+    }
+
+    table{
+
+        width:100%;
+
+        font-size:14px;
+
+    }
 
 }
 
 
-
-#userGuess{
-
-    width:220px;
-
-    padding:12px;
-
-
-    background:#090909;
-
-
-    border:
-
-    1px solid #d4af37;
-
-
-    color:#fff;
-
-
-    text-align:center;
-
-
-    font-size:18px;
-
-
-    border-radius:8px;
-
-}
-
-
-
-#userGuess:focus{
-
-    outline:none;
-
-    box-shadow:
-
-    0 0 15px rgba(212,175,55,.5);
-
-}
-
-
-
-/* 結果カード */
-
-.result-card{
-
-
-    margin-top:40px;
-
-
-    padding:25px;
-
-
-    background:
-
-    rgba(20,20,20,.8);
-
-
-    border-radius:18px;
-
-
-    border:
-
-    1px solid rgba(212,175,55,.25);
-
-
-}
-
-
-
-.result-card h2{
-
-    color:#d4af37;
-
-}
-
-
-
-/* 履歴ボタン */
-
-.history-btn{
-
-
-    margin-top:20px;
-
-
-    background:transparent;
-
-
-    color:#d4af37;
-
-
-    border:
-
-    1px solid #d4af37;
-
-
-}
-
-
-.history-btn:hover{
-
-
-    background:#d4af37;
-
-    color:#090909;
-
-}
-        
     </style>
 </head>
 <body>
