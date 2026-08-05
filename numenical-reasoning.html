@@ -570,7 +570,67 @@ tbody tr:hover{
     }
 
 }
+/*==============================
+ Guess Card
+==============================*/
 
+.guess-card{
+
+    width:min(450px,90%);
+
+    margin:30px auto;
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:rgba(20,20,20,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:22px;
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.45);
+
+}
+
+/*==============================
+ Result Card
+==============================*/
+
+.result-card,
+
+.history-card{
+
+    width:min(950px,95%);
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:rgba(20,20,20,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:22px;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.4);
+
+}
 
     </style>
 </head>
@@ -584,19 +644,18 @@ tbody tr:hover{
     </p>
 
 
-    <div class="guess-card">
 
-        <input 
-        type="number" 
+       <div class="guess-card">
+
+    <input
+        type="number"
         id="userGuess"
-        placeholder="Enter Number"
+        placeholder="Enter a number (1-100)"
         min="1"
         max="100">
 
+    <button onclick="guessNumber()">Enter</button>
 
-        <button onclick="guessNumber()">
-            ENTER
-        </button>
 
     </div>
 
@@ -604,7 +663,9 @@ tbody tr:hover{
 </div>
 <section class="result-card">
 
-<h2>RESULT</h2>
+<div class="result-card">
+
+<h2>Result</h2>
 
 <table id="resultTable">
         <thead>
@@ -619,6 +680,7 @@ tbody tr:hover{
             <!-- 結果がここに追加されます -->
         </tbody>
     </table>
+    </div>
  </section>
 
     <button class="history-btn"
@@ -628,8 +690,11 @@ CHECK HISTORY
 
 </button>
 
-    <h2>result in the past</h2>
-    <table id="previousResultsTable" style="display:none;">
+   <div class="history-card">
+
+<h2>Previous Results</h2>
+
+<table id="previousResultsTable">
         <thead>
             <tr>
                 <th>total challenge</th>
@@ -642,6 +707,7 @@ CHECK HISTORY
             <!-- 過去のゲーム結果がここに表示されます -->
         </tbody>
     </table>
+       </div>
     <strong>
     <button onclick="jumpToWebsite1()">数当てゲーム1000</button>
     <button onclick="jumpToWebsite2()">数当てゲーム10000</button>
