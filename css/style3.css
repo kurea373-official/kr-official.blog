@@ -1,39 +1,41 @@
 /* ==========================================================
-   Iida Line Heritage Collection
    Apple Tea Studio
-   style.css Part 1
+   Iida Line Heritage Collection
+   Sky Blue Edition
+   Part1
 ========================================================== */
 
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
+/* ========================================================== */
+
 :root{
 
-    --gold:#c8a64d;
-    --gold-light:#e8d8a6;
-    --gold-dark:#8d6712;
+    --primary:#4fb7ff;
+    --primary-light:#8edbff;
+    --primary-dark:#1976d2;
 
-    --brown:#4b4234;
-    --brown-dark:#2b2620;
+    --accent:#77d0ff;
 
-    --bg:#f7f4ee;
-    --bg2:#ece4d4;
+    --bg:#f7fcff;
+    --bg2:#e8f6ff;
 
-    --card:rgba(255,255,255,.88);
+    --card:rgba(255,255,255,.82);
 
-    --text:#2f2f2f;
-    --text-light:#666;
+    --text:#233544;
+    --text-light:#647483;
 
-    --border:rgba(200,166,77,.25);
+    --border:rgba(79,183,255,.18);
 
     --shadow:
-    0 12px 30px rgba(0,0,0,.08);
+    0 15px 35px rgba(30,110,170,.12);
 
-    --radius:18px;
+    --radius:20px;
 
 }
 
-/* ========================================= */
+/* ========================================================== */
 
 *{
 
@@ -54,12 +56,13 @@ body{
     font-family:'Noto Sans JP',sans-serif;
 
     background:
-
     linear-gradient(
-    180deg,
-    #faf8f2,
-    #f3ede0,
-    #ece3cf);
+        180deg,
+        #fcfeff 0%,
+        #f2fbff 25%,
+        #e6f5ff 55%,
+        #d9efff 100%
+    );
 
     color:var(--text);
 
@@ -69,7 +72,7 @@ body{
 
 }
 
-/* ========================================= */
+/* ========================================================== */
 
 .container{
 
@@ -79,9 +82,9 @@ body{
 
 }
 
-/* ========================================= */
-/* HEADER */
-/* ========================================= */
+/* ==========================================================
+   Header
+========================================================== */
 
 header{
 
@@ -91,22 +94,19 @@ header{
 
     z-index:999;
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(18px);
 
     background:
-
     linear-gradient(
-    90deg,
-    #2b2620,
-    #4b4234,
-    #8d6712,
-    #d4b768);
-
-    color:#fff;
+        135deg,
+        #67c8ff,
+        #4fb7ff,
+        #2f95ea,
+        #1976d2
+    );
 
     box-shadow:
-
-    0 6px 20px rgba(0,0,0,.25);
+    0 8px 25px rgba(0,0,0,.18);
 
 }
 
@@ -128,41 +128,47 @@ header{
 
 .header-title{
 
-    font-size:28px;
+    color:white;
+
+    font-size:29px;
 
     font-weight:700;
 
-    letter-spacing:.12em;
+    letter-spacing:.08em;
 
 }
 
 .header-subtitle{
 
+    margin-top:5px;
+
+    color:#eefaff;
+
     font-size:13px;
 
-    color:#efe3b8;
-
-    margin-top:4px;
+    letter-spacing:.08em;
 
 }
 
-/* ========================================= */
-/* BACK BUTTON */
-/* ========================================= */
+/* ==========================================================
+   Back Button
+========================================================== */
 
 .back-link{
 
-    color:#fff;
+    color:white;
 
     text-decoration:none;
 
-    padding:10px 20px;
+    padding:11px 22px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    border:1px solid rgba(255,255,255,.15);
+    background:
+    rgba(255,255,255,.12);
 
-    background:rgba(255,255,255,.08);
+    border:
+    1px solid rgba(255,255,255,.18);
 
     transition:.25s;
 
@@ -170,55 +176,67 @@ header{
 
 .back-link:hover{
 
-    background:rgba(255,255,255,.15);
+    background:
+    rgba(255,255,255,.22);
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-2px);
 
 }
 
-/* ========================================= */
+/* ==========================================================
+   Section Card
+========================================================== */
 
 section{
 
-    background:var(--card);
+    margin:35px 0;
+
+    padding:35px;
+
+    background:
+
+    rgba(255,255,255,.82);
 
     backdrop-filter:blur(20px);
 
     border-radius:22px;
 
-    padding:35px;
+    border:
+    1px solid rgba(79,183,255,.15);
 
-    margin:35px 0;
+    box-shadow:
+    0 15px 35px rgba(50,120,180,.10);
 
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-
-    transition:.3s;
+    transition:.35s;
 
 }
 
 section:hover{
 
-    transform:translateY(-5px);
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 22px 40px rgba(30,100,170,.18);
 
 }
 
-/* ========================================= */
+/* ==========================================================
+   Title
+========================================================== */
 
 h2{
 
     text-align:center;
 
-    color:var(--gold-dark);
+    color:var(--primary-dark);
 
     font-size:30px;
 
-    margin-bottom:30px;
-
-    position:relative;
-
     letter-spacing:.08em;
+
+    margin-bottom:28px;
 
 }
 
@@ -234,25 +252,25 @@ h2::after{
 
     margin:15px auto 0;
 
-    border-radius:99px;
+    border-radius:999px;
 
     background:
-
     linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent);
+        90deg,
+        transparent,
+        var(--primary),
+        transparent
+    );
 
 }
 
 h3{
 
-    color:var(--brown);
+    color:#246eb9;
 
     font-size:22px;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
 }
 
@@ -264,33 +282,35 @@ p{
 
 }
 
-/* ========================================= */
+/* ==========================================================
+   Image
+========================================================== */
 
 .station-image{
 
     width:100%;
 
-    border-radius:16px;
+    border-radius:18px;
 
     overflow:hidden;
 
     box-shadow:
-
     0 12px 30px rgba(0,0,0,.15);
 
-    transition:.4s;
+    transition:.35s;
 
 }
 
 .station-image:hover{
 
-    transform:scale(1.02);
+    transform:
+    scale(1.02);
 
 }
 
-/* ========================================= */
-/* PROFILE */
-/* ========================================= */
+/* ==========================================================
+   Profile
+========================================================== */
 
 .profile-item{
 
@@ -302,7 +322,8 @@ p{
 
     padding:16px 0;
 
-    border-bottom:1px solid #e7dfcf;
+    border-bottom:
+    1px solid rgba(79,183,255,.15);
 
 }
 
@@ -310,39 +331,40 @@ p{
 
     font-weight:700;
 
-    color:var(--brown);
+    color:var(--primary-dark);
 
 }
 
 .profile-value{
 
-    color:#666;
+    color:var(--text-light);
 
 }
 
-/* ========================================= */
-/* NOTICE */
-/* ========================================= */
+/* ==========================================================
+   Notice
+========================================================== */
 
 #noticeBoard{
 
     margin:35px auto;
 
-    border-radius:18px;
-
     padding:20px;
 
-    background:
+    border-radius:20px;
 
+    background:
     linear-gradient(
-    135deg,
-    #3f372c,
-    #8d6712,
-    #d4b768);
+        135deg,
+        #5ec6ff,
+        #4fb7ff,
+        #2e97ea
+    );
 
     color:white;
 
-    box-shadow:var(--shadow);
+    box-shadow:
+    0 15px 35px rgba(60,140,220,.20);
 
 }
 
@@ -357,9 +379,12 @@ p{
     letter-spacing:.05em;
 
 }
+
 /* ==========================================================
-   style.css Part2
-   秘境駅・ボタン・SNS・更新履歴
+   Apple Tea Studio
+   Iida Line Heritage Collection
+   Sky Blue Edition
+   Part2
 ========================================================== */
 
 /* =========================================
@@ -385,20 +410,21 @@ p{
 
     background:
     linear-gradient(
-    145deg,
-    #faf7ef,
-    #efe5cf);
+        145deg,
+        rgba(255,255,255,.96),
+        rgba(235,248,255,.96)
+    );
 
-    border:1px solid rgba(200,166,77,.25);
+    border:1px solid rgba(79,183,255,.18);
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:22px;
+    padding:24px;
 
     transition:.35s;
 
     box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
+    0 12px 28px rgba(70,150,220,.10);
 
 }
 
@@ -408,15 +434,15 @@ p{
     translateY(-8px);
 
     box-shadow:
-    0 18px 35px rgba(0,0,0,.18);
+    0 20px 40px rgba(60,150,220,.18);
 
-    border-color:#c8a64d;
+    border-color:#4fb7ff;
 
 }
 
 .station-link{
 
-    color:#4b4234;
+    color:#1976d2;
 
     text-decoration:none;
 
@@ -424,9 +450,9 @@ p{
 
     font-weight:700;
 
-    letter-spacing:.05em;
+    font-size:18px;
 
-    font-size:17px;
+    letter-spacing:.05em;
 
 }
 
@@ -434,12 +460,12 @@ p{
 
     content:" →";
 
-    color:#b08d57;
+    color:#4fb7ff;
 
 }
 
 /* =========================================
-   駅紹介
+   各駅紹介
 ========================================= */
 
 .project{
@@ -450,15 +476,15 @@ p{
 
 .project h3{
 
-    color:#8d6712;
+    color:#1976d2;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
 
 }
 
 .project img{
 
-    border-radius:16px;
+    border-radius:18px;
 
     transition:.35s;
 
@@ -466,7 +492,8 @@ p{
 
 .project img:hover{
 
-    transform:scale(1.02);
+    transform:
+    scale(1.03);
 
 }
 
@@ -475,19 +502,9 @@ p{
 ========================================= */
 
 .contact-link,
-
 button{
 
     display:inline-block;
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #b08d57,
-    #8d6712);
-
-    color:white;
 
     padding:13px 28px;
 
@@ -495,33 +512,45 @@ button{
 
     border:none;
 
+    cursor:pointer;
+
     text-decoration:none;
 
     font-weight:600;
 
-    cursor:pointer;
+    color:white;
 
-    transition:.25s;
+    background:
+    linear-gradient(
+        135deg,
+        #6ed2ff,
+        #3caeff,
+        #1976d2
+    );
 
     box-shadow:
+    0 8px 22px rgba(70,150,220,.20);
 
-    0 8px 20px rgba(141,103,18,.25);
+    transition:.3s;
 
 }
 
 .contact-link:hover,
-
 button:hover{
 
     transform:
     translateY(-3px);
 
-    background:
+    box-shadow:
+    0 14px 30px rgba(60,150,220,.30);
 
+    background:
     linear-gradient(
-    135deg,
-    #d8bf7d,
-    #b08d57);
+        135deg,
+        #8fe1ff,
+        #5fc8ff,
+        #2494eb
+    );
 
 }
 
@@ -539,23 +568,29 @@ button:hover{
 
 .past-notices li{
 
-    padding:16px;
+    padding:18px;
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
     background:white;
 
-    border-left:5px solid #c8a64d;
+    border-left:6px solid #4fb7ff;
 
-    border-radius:10px;
+    border-radius:14px;
 
-    transition:.25s;
+    transition:.3s;
+
+    box-shadow:
+    0 6px 16px rgba(0,0,0,.05);
 
 }
 
 .past-notices li:hover{
 
-    transform:translateX(6px);
+    transform:
+    translateX(8px);
+
+    border-left-color:#1976d2;
 
 }
 
@@ -571,15 +606,15 @@ button:hover{
 
     gap:22px;
 
-    margin-top:25px;
+    margin-top:28px;
 
 }
 
 .social-links a{
 
-    width:52px;
+    width:55px;
 
-    height:52px;
+    height:55px;
 
     display:flex;
 
@@ -591,32 +626,30 @@ button:hover{
 
     background:white;
 
-    border:1px solid rgba(200,166,77,.25);
+    border:1px solid rgba(79,183,255,.18);
 
     transition:.3s;
 
     box-shadow:
-
-    0 8px 20px rgba(0,0,0,.08);
+    0 10px 20px rgba(60,150,220,.10);
 
 }
 
 .social-links a:hover{
 
-    transform:
+    background:#4fb7ff;
 
+    transform:
     translateY(-6px)
     scale(1.08);
-
-    background:#c8a64d;
 
 }
 
 .social-links img{
 
-    width:28px;
+    width:30px;
 
-    height:28px;
+    height:30px;
 
 }
 
@@ -628,28 +661,29 @@ button:hover{
 
     display:inline-block;
 
-    background:
+    margin-left:8px;
 
-    linear-gradient(
-    135deg,
-    #d4af37,
-    #8d6712);
-
-    color:white;
-
-    font-size:11px;
-
-    padding:4px 8px;
+    padding:4px 10px;
 
     border-radius:999px;
 
-    margin-left:8px;
+    font-size:11px;
 
-    letter-spacing:.08em;
+    font-weight:700;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4fb7ff,
+        #1976d2
+    );
 
     box-shadow:
+    0 5px 12px rgba(70,150,220,.25);
 
-    0 5px 12px rgba(0,0,0,.15);
+    letter-spacing:.08em;
 
 }
 
@@ -665,12 +699,16 @@ a{
 
 a:hover{
 
-    color:#8d6712;
+    color:#1976d2;
 
 }
+
+
 /* ==========================================================
-   style.css Part3
-   Footer・レスポンシブ・アニメーション
+   Apple Tea Studio
+   Iida Line Heritage Collection
+   Sky Blue Edition
+   Part3
 ========================================================== */
 
 /* =========================================
@@ -679,19 +717,23 @@ a:hover{
 
 footer{
 
-    margin-top:80px;
+    margin-top:90px;
 
     background:
-
     linear-gradient(
-    135deg,
-    #221f1a,
-    #4b4234,
-    #8d6712);
+        135deg,
+        #0d47a1,
+        #1976d2,
+        #4fc3f7,
+        #81d4fa
+    );
 
-    color:#f5f5f5;
+    color:white;
 
-    padding:55px 20px 30px;
+    padding:60px 20px 30px;
+
+    box-shadow:
+    0 -8px 30px rgba(0,0,0,.12);
 
 }
 
@@ -705,23 +747,25 @@ footer{
 
 .footer-brand h2{
 
-    color:#f2dfb1;
+    color:white;
 
-    font-size:28px;
+    text-align:center;
+
+    font-size:30px;
+
+    letter-spacing:.15em;
 
     margin-bottom:8px;
-
-    letter-spacing:.12em;
 
 }
 
 .footer-brand p{
 
+    color:rgba(255,255,255,.9);
+
     text-align:center;
 
-    color:#d8d8d8;
-
-    margin-bottom:30px;
+    margin-bottom:28px;
 
 }
 
@@ -731,15 +775,15 @@ footer{
 
     height:1px;
 
-    background:
-
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.25),
-    transparent);
-
     margin:30px 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
 
 }
 
@@ -751,27 +795,27 @@ footer{
 
     flex-wrap:wrap;
 
-    gap:30px;
+    gap:28px;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
 }
 
 .footer-links a{
 
-    color:#f4e7c0;
+    color:white;
 
     text-decoration:none;
 
-    letter-spacing:.08em;
+    transition:.3s;
 
-    transition:.25s;
+    font-weight:600;
 
 }
 
 .footer-links a:hover{
 
-    color:white;
+    color:#e1f5fe;
 
     transform:translateY(-2px);
 
@@ -785,9 +829,7 @@ footer{
 
 .footer-copy p{
 
-    color:#f2f2f2;
-
-    text-align:center;
+    color:white;
 
     margin-bottom:8px;
 
@@ -795,11 +837,7 @@ footer{
 
 .footer-copy small{
 
-    display:block;
-
-    color:#bdbdbd;
-
-    margin-top:6px;
+    color:rgba(255,255,255,.75);
 
 }
 
@@ -815,28 +853,28 @@ table{
 
     overflow:hidden;
 
-    border-radius:16px;
+    border-radius:18px;
 
     background:white;
 
     box-shadow:
-
-    0 8px 25px rgba(0,0,0,.08);
+    0 12px 28px rgba(70,150,220,.10);
 
 }
 
 th{
 
-    background:
-
-    linear-gradient(
-    135deg,
-    #d8bf7d,
-    #b08d57);
-
-    color:#fff;
-
     padding:16px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4fc3f7,
+        #2196f3,
+        #1976d2
+    );
 
 }
 
@@ -844,22 +882,29 @@ td{
 
     padding:14px;
 
-    border-bottom:1px solid #ececec;
+    border-bottom:1px solid #eef6fb;
+
+}
+
+tr:nth-child(even){
+
+    background:#f8fcff;
 
 }
 
 tr:hover{
 
-    background:#faf7ef;
+    background:#eef8ff;
 
 }
 
 /* =========================================
-   Card Animation
+   Fade Animation
 ========================================= */
 
 section,
-.station-item{
+.station-item,
+.project{
 
     animation:fadeUp .7s ease;
 
@@ -872,8 +917,7 @@ section,
         opacity:0;
 
         transform:
-
-        translateY(25px);
+        translateY(30px);
 
     }
 
@@ -882,7 +926,6 @@ section,
         opacity:1;
 
         transform:
-
         translateY(0);
 
     }
@@ -895,27 +938,37 @@ section,
 
 ::-webkit-scrollbar{
 
-    width:10px;
+    width:11px;
 
 }
 
 ::-webkit-scrollbar-track{
 
-    background:#f3ede0;
+    background:#edf8ff;
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:#b08d57;
+    border-radius:999px;
 
-    border-radius:99px;
+    background:
+    linear-gradient(
+        #81d4fa,
+        #29b6f6,
+        #1976d2
+    );
 
 }
 
 ::-webkit-scrollbar-thumb:hover{
 
-    background:#8d6712;
+    background:
+    linear-gradient(
+        #64b5f6,
+        #2196f3,
+        #1565c0
+    );
 
 }
 
@@ -925,9 +978,9 @@ section,
 
 ::selection{
 
-    background:#d8bf7d;
+    background:#81d4fa;
 
-    color:#222;
+    color:#003049;
 
 }
 
@@ -941,7 +994,7 @@ section,
 
     flex-direction:column;
 
-    gap:15px;
+    gap:16px;
 
 }
 
@@ -983,7 +1036,7 @@ section,
 
 section{
 
-    padding:22px;
+    padding:24px;
 
 }
 
@@ -995,7 +1048,7 @@ section{
 
 .footer-brand h2{
 
-    font-size:22px;
+    font-size:24px;
 
 }
 
@@ -1015,7 +1068,6 @@ button{
 }
 
 }
-
 /* =========================================
    End
 ========================================= */
