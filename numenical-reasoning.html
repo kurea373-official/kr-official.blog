@@ -214,17 +214,204 @@ button:hover {
 
 
 }
+
+/* =====================
+ 数当てゲーム本体
+===================== */
+
+
+.number-game{
+
+    width:100%;
+
+}
+
+
+
+.subtitle{
+
+    color:#aaa;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.guess-card{
+
+    width:350px;
+
+    margin:auto;
+
+    padding:30px;
+
+
+    background:
+
+    rgba(20,20,20,.85);
+
+
+    border:
+
+    1px solid rgba(212,175,55,.3);
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.15);
+
+}
+
+
+
+#userGuess{
+
+    width:220px;
+
+    padding:12px;
+
+
+    background:#090909;
+
+
+    border:
+
+    1px solid #d4af37;
+
+
+    color:#fff;
+
+
+    text-align:center;
+
+
+    font-size:18px;
+
+
+    border-radius:8px;
+
+}
+
+
+
+#userGuess:focus{
+
+    outline:none;
+
+    box-shadow:
+
+    0 0 15px rgba(212,175,55,.5);
+
+}
+
+
+
+/* 結果カード */
+
+.result-card{
+
+
+    margin-top:40px;
+
+
+    padding:25px;
+
+
+    background:
+
+    rgba(20,20,20,.8);
+
+
+    border-radius:18px;
+
+
+    border:
+
+    1px solid rgba(212,175,55,.25);
+
+
+}
+
+
+
+.result-card h2{
+
+    color:#d4af37;
+
+}
+
+
+
+/* 履歴ボタン */
+
+.history-btn{
+
+
+    margin-top:20px;
+
+
+    background:transparent;
+
+
+    color:#d4af37;
+
+
+    border:
+
+    1px solid #d4af37;
+
+
+}
+
+
+.history-btn:hover{
+
+
+    background:#d4af37;
+
+    color:#090909;
+
+}
         
     </style>
 </head>
 <body>
-    <h1>numenical reasoning100</h1>
-    <p></p>
-    <input type="number" id="userGuess" placeholder="number brank" min="1" max="100">
-    <button onclick="guessNumber()">Enter</button>
+    <div class="number-game">
 
-    <h2>result</h2>
-    <table id="resultTable">
+    <h1>🎯 Numerical Reasoning 100</h1>
+
+    <p class="subtitle">
+        Guess the hidden number between 1 and 100
+    </p>
+
+
+    <div class="guess-card">
+
+        <input 
+        type="number" 
+        id="userGuess"
+        placeholder="Enter Number"
+        min="1"
+        max="100">
+
+
+        <button onclick="guessNumber()">
+            ENTER
+        </button>
+
+    </div>
+
+
+</div>
+<section class="result-card">
+
+<h2>RESULT</h2>
+
+<table id="resultTable">
         <thead>
             <tr>
                 <th>challenge</th>
@@ -237,8 +424,14 @@ button:hover {
             <!-- 結果がここに追加されます -->
         </tbody>
     </table>
+ </section>
 
-    <p><a href="#" onclick="showPreviousResults()">check the result in the past</a></p>
+    <button class="history-btn"
+onclick="showPreviousResults()">
+
+CHECK HISTORY
+
+</button>
 
     <h2>result in the past</h2>
     <table id="previousResultsTable" style="display:none;">
