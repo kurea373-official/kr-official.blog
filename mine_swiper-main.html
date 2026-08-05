@@ -5,105 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マインスイーパー</title>
     <style>
-        /* 全体のスタイル設定 */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f8ff;
-            color: #E40112;
-        }
+      /*====================================
+ Apple Tea Studio
+ Minesweeper Theme
+====================================*/
 
-        h1 {
-            margin-bottom: 20px;
-            color: #E40112;
-        }
+:root{
 
-        /* ゲームボードのスタイル設定 */
-        #minefield {
-            display: grid;
-            grid-template-columns: repeat(10, 40px);
-            grid-gap: 2px;
-            margin: 0 auto;
-            max-width: 420px;
-        }
+    --gold:#d4af37;
+    --gold-light:#f5d36a;
 
-        .cell {
-            width: 40px;
-            height: 40px;
-            background-color: #ddd;
-            border: 1px solid #999;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            user-select: none;
-        }
+    --bg:#090909;
+    --bg2:#161616;
 
-        .mine {
-            background-color: #f00;
-        }
+    --card:#181818;
 
-        .revealed {
-            background-color: #bbb;
-            cursor: default;
-        }
+    --border:rgba(212,175,55,.18);
 
-        .flagged {
-            background-color: #ff0;
-        }
+    --text:#f5f5f5;
 
-        /* コントロールボタンのスタイル設定 */
-        #controls {
-            margin-top: 20px;
-        }
+    --sub:#c8c8c8;
 
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #E40112;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+}
 
-        button:hover {
-            background-color: #E31F26;
-        }
+/*====================================*/
 
-        /* 過去の結果テーブルのスタイル設定 */
-        #previousResultsTable {
-            margin-top: 20px;
-            display: none;
-            width: 50%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
+*{
 
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
+    margin:0;
 
-        th {
-            background-color: #f2f2f2;
-        }
+    padding:0;
 
-        .mine-footer{
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
 
     background:
-    linear-gradient(180deg,#8b0000,#260000);
+    radial-gradient(
+        circle at top,
+        #2d2d2d,
+        #161616 45%,
+        #090909);
 
-    color:#fff;
+    color:var(--text);
 
-    border-top:2px solid #ff4d4d;
+    padding:40px 20px;
+
 }
+
+/*====================================*/
+
+h1{
+
+    color:var(--gold);
+
+    font-size:40px;
+
+    margin-bottom:12px;
+
+    letter-spacing:.15em;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.18);
+
+}
+
+p{
+
+    color:#d0d0d0;
+
+    margin-bottom:20px;
+
+}
+
+/*====================================
+ 盤面
+====================================*/
+
+#minefield{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(10,42px);
+
+    gap:4px;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    background:
+
+    rgba(18,18,18,.82);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+
+    0 18px 45px rgba(0,0,0,.45);
+
+}
+
+/*====================================
+ マス
+====================================*/
+
+.cell{
+
+    width:42px;
+
+    height:42px;
+
+    background:#252525;
+
+    border:
+
+    1px solid rgba(212,175,55,.15);
+
+    border-radius:8px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.cell:hover{
+
+    background:#303030;
+
+    transform:scale(1.04);
+
+}
+
+/*====================================*/
+
+.revealed{
+
+    background:#3c3c3c;
+
+}
+
+.mine{
+
+    background:#b91c1c;
+
+    color:white;
+
+}
+
+.flagged{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+/*==================================================
+    Apple Tea Studio 共通フッター
+==================================================*/
 
 .site-footer{
 
-    margin-top:60px;
+    margin-top:70px;
 
     width:100%;
 
@@ -113,7 +204,7 @@
 
     box-sizing:border-box;
 
-    color:#fff;
+    color:#ffffff;
 
 }
 
@@ -125,13 +216,13 @@
 
 }
 
-.footer-divider{
+.footer-inner h2{
 
-    width:90px;
+    margin:0;
 
-    height:2px;
+    font-size:28px;
 
-    margin:20px auto;
+    letter-spacing:.08em;
 
 }
 
@@ -139,11 +230,27 @@
 
     margin-top:8px;
 
+    font-size:15px;
+
+    opacity:.9;
+
+}
+
+.footer-divider{
+
+    width:90px;
+
+    height:2px;
+
+    margin:22px auto;
+
 }
 
 .footer-message{
 
-    margin:15px 0;
+    margin:18px 0;
+
+    font-size:15px;
 
 }
 
@@ -153,22 +260,63 @@
 
     line-height:1.8;
 
+    opacity:.85;
+
 }
+
+/*==================================
+   Minesweeper Theme
+==================================*/
 
 .mine-footer{
 
     background:
-    linear-gradient(180deg,#b00014,#50000a);
+    linear-gradient(
+        180deg,
+        #8d0d18,
+        #5a0810,
+        #240204
+    );
 
-    border-top:2px solid #ff5a5a;
+    color:#ffffff;
+
+    border-top:2px solid #ff5b63;
+
+    box-shadow:
+        0 -8px 25px rgba(0,0,0,.25);
+
+}
+
+.mine-footer h2{
+
+    color:#ffffff;
+
+}
+
+.mine-footer .footer-title{
+
+    color:#ffd8d8;
 
 }
 
 .mine-footer .footer-divider{
 
-    background:#ff5a5a;
+    background:#ff5b63;
 
 }
+
+.mine-footer .footer-message{
+
+    color:#ffffff;
+
+}
+
+.mine-footer small{
+
+    color:#ffdcdc;
+
+}
+
     </style>
 </head>
 <body>
