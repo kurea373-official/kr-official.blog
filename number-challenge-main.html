@@ -290,123 +290,122 @@ th {
 ===================== */
 
 
-.sudoku-footer {
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#6e5314;
+
+    border-radius:20px;
+
+}
+
+
+
+.sudoku-footer{
+
+    margin-top:auto;
+
+    width:100%;
 
 
     background:
 
     linear-gradient(
         180deg,
-        #161616,
-        #050505
+        #18130a,
+        #090909
     );
 
 
+    color:#f5e3a2;
+
+
+    /* bodyとの境界線 */
     border-top:
 
-    2px solid #d4af37;
+    3px solid #d4af37;
 
+
+    box-shadow:
+
+    0 -8px 25px rgba(212,175,55,.18);
+
+
+    padding:35px 0;
+
+}
+
+
+/* フッター内文字 */
+
+.sudoku-footer h2{
+
+    color:#f5d36a;
 
 }
 
 
 
-.sudoku-footer .footer-divider {
+.sudoku-footer .footer-title{
 
+    color:#e8c968;
+
+}
+
+
+
+.sudoku-footer .footer-message{
+
+    color:#f5e3a2;
+
+}
+
+
+
+.sudoku-footer small{
+
+    color:#c8b77a;
+
+}
+
+
+
+.sudoku-footer .footer-divider{
 
     background:#d4af37;
 
+}
+
+
+
+.sudoku-footer a{
+
+    color:#f5d36a;
+
+    text-decoration:none;
 
 }
 
 
 
-.site-footer {
+.sudoku-footer a:hover{
 
-
-    margin-top:60px;
-
-
-    width:100%;
-
-
-    padding:35px 20px;
-
-
-    text-align:center;
-
-
-    box-sizing:border-box;
-
-
-    color:#fff;
-
+    color:#fff1a8;
 
 }
 
 
 
-.footer-inner {
+  
+   
 
 
-    max-width:1100px;
-
-
-    margin:auto;
-
-
-}
-
-
-
-.footer-divider {
-
-
-    width:90px;
-
-
-    height:2px;
-
-
-    margin:20px auto;
-
-
-}
-
-
-
-.footer-title {
-
-
-    margin-top:8px;
-
-    color:#d4af37;
-
-}
-
-
-
-.footer-message {
-
-
-    margin:15px 0;
-
-    color:#ddd;
-
-}
-
-
-
-.footer-inner small {
-
-
-    display:block;
-
-    line-height:1.8;
-
-    color:#aaa;
-
-}
 
     </style>
 </head>
@@ -739,20 +738,20 @@ th {
         showPreviousResults();
     };
 </script>
-<footer class="site-footer number-footer">
+  <footer class="site-footer sudoku-footer">
     <div class="footer-inner">
 
-        <h2>🔷 KR OFFICIAL </h2>
-        <p class="footer-title">Sudoku Collection</p>
+        <h2>♠ KR OFFICIAL ♣</h2>
+        <p class="footer-title">Number-Challenge Game </p>
 
         <div class="footer-divider"></div>
 
         <p class="footer-message">
-            Think • Solve • Challenge
+           Deep of Thinking
         </p>
 
         <small>
-            ©2026 kurekure.a1024 ALL Rights Reserved. <br>
+            © 2026 kurekure.a1024. ALL Rights Reserved. <br>
             Designed & Developed by KR サイトID KR005-@kurekure.a1024
         </small>
 
