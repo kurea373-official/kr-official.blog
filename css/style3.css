@@ -1,35 +1,53 @@
 /* ==========================================================
-   Apple Tea Studio
    Iida Line Heritage Collection
-   Sky Blue Edition
+   style.css Ver.2
    Part1
+   共通設定・背景・Header
 ========================================================== */
 
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
-/* ========================================================== */
+/* ==========================================================
+   Theme Color
+========================================================== */
 
 :root{
 
-    --primary:#4fb7ff;
-    --primary-light:#8edbff;
-    --primary-dark:#1976d2;
+    /* Sky */
+    --sky:#77c8ff;
+    --sky-light:#dff4ff;
+    --sky-dark:#3799db;
 
-    --accent:#77d0ff;
+    /* River */
+    --river:#4db6d9;
+    --river-light:#8ad7ef;
 
-    --bg:#f7fcff;
-    --bg2:#e8f6ff;
+    /* Forest */
+    --forest:#4e7757;
+    --forest-light:#79a986;
+
+    /* Wood */
+    --wood:#8d6b43;
+    --wood-dark:#5e4427;
+
+    /* Rail */
+    --rail:#555;
+    --rail-light:#808080;
+
+    /* Base */
+    --bg:#f5fbff;
+    --bg2:#edf7fb;
 
     --card:rgba(255,255,255,.82);
 
-    --text:#233544;
-    --text-light:#647483;
+    --text:#2f2f2f;
+    --text-light:#626262;
 
-    --border:rgba(79,183,255,.18);
+    --border:rgba(70,120,170,.12);
 
     --shadow:
-    0 15px 35px rgba(30,110,170,.12);
+    0 15px 35px rgba(0,0,0,.10);
 
     --radius:20px;
 
@@ -39,46 +57,125 @@
 
 *{
 
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 
 }
 
 html{
 
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 
 }
 
 body{
 
-    font-family:'Noto Sans JP',sans-serif;
+font-family:'Noto Sans JP',sans-serif;
 
-    background:
-    linear-gradient(
-        180deg,
-        #fcfeff 0%,
-        #f2fbff 25%,
-        #e6f5ff 55%,
-        #d9efff 100%
-    );
+color:var(--text);
 
-    color:var(--text);
+line-height:1.9;
 
-    line-height:1.8;
+background:
 
-    -webkit-font-smoothing:antialiased;
+linear-gradient(
+180deg,
+#d9f1ff 0%,
+#edf8ff 18%,
+#ffffff 42%,
+#eef7f3 100%);
+
+background-attachment:fixed;
+
+overflow-x:hidden;
+
+-webkit-font-smoothing:antialiased;
 
 }
 
-/* ========================================================== */
+/* ==========================================================
+   Sky Effect
+========================================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+circle at 20% 10%,
+rgba(255,255,255,.55),
+transparent 28%),
+
+radial-gradient(
+circle at 80% 12%,
+rgba(255,255,255,.45),
+transparent 30%);
+
+z-index:-2;
+
+}
+
+/* ==========================================================
+   Mountain Layer
+========================================================== */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+left:0;
+bottom:0;
+
+width:100%;
+height:260px;
+
+background:
+
+linear-gradient(
+180deg,
+transparent,
+rgba(78,119,87,.08)),
+
+url("images/mountain.svg");
+
+background-repeat:no-repeat;
+background-size:cover;
+background-position:bottom;
+
+opacity:.35;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* mountain.svgが無い場合は自動で透明になります */
+
+/* ==========================================================
+   Container
+========================================================== */
 
 .container{
 
-    width:min(1100px,92%);
+width:min(1180px,92%);
 
-    margin:auto;
+margin:auto;
 
 }
 
@@ -88,65 +185,114 @@ body{
 
 header{
 
-    position:sticky;
+position:sticky;
 
-    top:0;
+top:0;
 
-    z-index:999;
+z-index:999;
 
-    backdrop-filter:blur(18px);
+backdrop-filter:blur(18px);
 
-    background:
-    linear-gradient(
-        135deg,
-        #67c8ff,
-        #4fb7ff,
-        #2f95ea,
-        #1976d2
-    );
+background:
 
-    box-shadow:
-    0 8px 25px rgba(0,0,0,.18);
+linear-gradient(
+90deg,
+rgba(29,91,129,.92),
+rgba(54,132,180,.92),
+rgba(92,183,222,.92));
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.18);
+
+overflow:hidden;
 
 }
 
+/* レール風ライン */
+
+header::after{
+
+content:"";
+
+display:block;
+
+height:6px;
+
+background:
+
+repeating-linear-gradient(
+
+90deg,
+
+#555 0 22px,
+#555 22px 26px,
+
+#b58d54 26px 42px,
+
+#555 42px 46px
+
+);
+
+opacity:.85;
+
+}
+
+/* ==========================================================
+   Header Layout
+========================================================== */
+
 .header-container{
 
-    width:min(1200px,94%);
+width:min(1200px,94%);
 
-    margin:auto;
+margin:auto;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    padding:20px;
+padding:22px;
+
+gap:20px;
 
 }
 
 .header-title{
 
-    color:white;
+font-size:30px;
 
-    font-size:29px;
+font-weight:700;
 
-    font-weight:700;
+letter-spacing:.08em;
 
-    letter-spacing:.08em;
+color:#fff;
+
+text-shadow:
+
+0 3px 10px rgba(0,0,0,.25);
 
 }
 
 .header-subtitle{
 
-    margin-top:5px;
+font-size:13px;
 
-    color:#eefaff;
+margin-top:6px;
 
-    font-size:13px;
+color:#dff6ff;
 
-    letter-spacing:.08em;
+letter-spacing:.08em;
+
+}
+
+.text-center{
+
+flex:1;
+
+text-align:center;
 
 }
 
@@ -156,918 +302,1773 @@ header{
 
 .back-link{
 
-    color:white;
+display:inline-flex;
 
-    text-decoration:none;
+align-items:center;
 
-    padding:11px 22px;
+gap:8px;
 
-    border-radius:14px;
+padding:12px 22px;
 
-    background:
-    rgba(255,255,255,.12);
+background:rgba(255,255,255,.15);
 
-    border:
-    1px solid rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.25);
 
-    transition:.25s;
+border-radius:999px;
+
+text-decoration:none;
+
+color:#fff;
+
+font-weight:600;
+
+transition:.3s;
+
+backdrop-filter:blur(10px);
 
 }
 
 .back-link:hover{
 
-    background:
-    rgba(255,255,255,.22);
+background:rgba(255,255,255,.25);
 
-    transform:
-    translateY(-2px);
+transform:translateY(-2px);
 
 }
 
 /* ==========================================================
-   Section Card
+   共通Section
 ========================================================== */
 
 section{
 
-    margin:35px 0;
+background:var(--card);
 
-    padding:35px;
+backdrop-filter:blur(20px);
 
-    background:
+border-radius:22px;
 
-    rgba(255,255,255,.82);
+padding:36px;
 
-    backdrop-filter:blur(20px);
+margin:38px 0;
 
-    border-radius:22px;
+border:1px solid var(--border);
 
-    border:
-    1px solid rgba(79,183,255,.15);
+box-shadow:var(--shadow);
 
-    box-shadow:
-    0 15px 35px rgba(50,120,180,.10);
+transition:.35s;
 
-    transition:.35s;
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* 左アクセントライン */
+
+section::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:6px;
+height:100%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+var(--sky),
+var(--river),
+var(--forest)
+
+);
 
 }
 
 section:hover{
 
-    transform:
-    translateY(-6px);
+transform:translateY(-5px);
 
-    box-shadow:
-    0 22px 40px rgba(30,100,170,.18);
+box-shadow:
+
+0 22px 45px rgba(0,0,0,.14);
 
 }
-
 /* ==========================================================
-   Title
-========================================================== */
+   style.css Ver.2
+   Part2
+   見出し・プロフィール・駅一覧
+==========================================================*/
+
+/* ==========================================
+   h2
+==========================================*/
 
 h2{
 
-    text-align:center;
+display:flex;
+align-items:center;
+gap:12px;
 
-    color:var(--primary-dark);
+font-size:30px;
+font-weight:700;
 
-    font-size:30px;
+margin-bottom:30px;
 
-    letter-spacing:.08em;
+color:#1f4c74;
 
-    margin-bottom:28px;
+letter-spacing:.05em;
+
+}
+
+h2::before{
+
+content:"";
+
+width:10px;
+height:32px;
+
+border-radius:99px;
+
+background:
+
+linear-gradient(
+180deg,
+var(--sky),
+var(--river),
+var(--forest));
 
 }
 
 h2::after{
 
-    content:"";
+content:"";
 
-    display:block;
+flex:1;
 
-    width:90px;
+height:2px;
 
-    height:3px;
+margin-left:10px;
 
-    margin:15px auto 0;
+background:
 
-    border-radius:999px;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        var(--primary),
-        transparent
-    );
+linear-gradient(
+90deg,
+rgba(77,182,217,.6),
+transparent);
 
 }
+
+/* ==========================================
+   h3
+==========================================*/
 
 h3{
 
-    color:#246eb9;
+font-size:22px;
 
-    font-size:22px;
+margin-bottom:16px;
 
-    margin-bottom:14px;
+color:var(--forest);
 
 }
+
+/* ==========================================
+   paragraph
+==========================================*/
 
 p{
 
-    color:var(--text-light);
+font-size:16px;
 
-    font-size:16px;
-
-}
-
-/* ==========================================================
-   Image
-========================================================== */
-
-.station-image{
-
-    width:100%;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 12px 30px rgba(0,0,0,.15);
-
-    transition:.35s;
+color:var(--text-light);
 
 }
 
-.station-image:hover{
-
-    transform:
-    scale(1.02);
-
-}
-
-/* ==========================================================
-   Profile
-========================================================== */
-
-.profile-item{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:16px 0;
-
-    border-bottom:
-    1px solid rgba(79,183,255,.15);
-
-}
-
-.profile-label{
-
-    font-weight:700;
-
-    color:var(--primary-dark);
-
-}
-
-.profile-value{
-
-    color:var(--text-light);
-
-}
-
-/* ==========================================================
-   Notice
-========================================================== */
+/* ==========================================
+   お知らせ
+==========================================*/
 
 #noticeBoard{
 
-    margin:35px auto;
+background:
 
-    padding:20px;
+linear-gradient(
+135deg,
+#1d79b8,
+#53b9df);
 
-    border-radius:20px;
+color:white;
 
-    background:
-    linear-gradient(
-        135deg,
-        #5ec6ff,
-        #4fb7ff,
-        #2e97ea
-    );
+border:none;
 
-    color:white;
+box-shadow:
 
-    box-shadow:
-    0 15px 35px rgba(60,140,220,.20);
+0 20px 40px rgba(40,120,180,.22);
+
+}
+
+#noticeBoard::before{
+
+display:none;
 
 }
 
 #noticeBoard p{
 
-    color:white;
+color:white;
 
-    text-align:center;
+font-size:17px;
 
-    font-size:16px;
+font-weight:600;
 
-    letter-spacing:.05em;
+text-align:center;
+
+letter-spacing:.05em;
 
 }
 
-/* ==========================================================
-   Apple Tea Studio
-   Iida Line Heritage Collection
-   Sky Blue Edition
-   Part2
-========================================================== */
+/* ==========================================
+   Profile
+==========================================*/
 
-/* =========================================
-   秘境駅一覧
-========================================= */
+.profile-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+border-bottom:
+
+1px dashed rgba(100,100,100,.15);
+
+transition:.25s;
+
+}
+
+.profile-item:hover{
+
+padding-left:10px;
+
+}
+
+.profile-label{
+
+font-weight:700;
+
+color:var(--forest);
+
+}
+
+.profile-value{
+
+color:#555;
+
+text-align:right;
+
+max-width:65%;
+
+}
+
+/* ==========================================
+   駅一覧
+==========================================*/
 
 .station-list{
 
-    list-style:none;
+list-style:none;
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:
 
-    gap:25px;
+repeat(auto-fit,minmax(240px,1fr));
 
-    margin-top:30px;
+gap:24px;
+
+margin-top:30px;
 
 }
+
+/* ==========================================
+   カード
+==========================================*/
 
 .station-item{
 
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.96),
-        rgba(235,248,255,.96)
-    );
+position:relative;
 
-    border:1px solid rgba(79,183,255,.18);
+overflow:hidden;
 
-    border-radius:20px;
+background:
 
-    padding:24px;
+linear-gradient(
+180deg,
+#ffffff,
+#f6fbff);
 
-    transition:.35s;
+border-radius:18px;
 
-    box-shadow:
-    0 12px 28px rgba(70,150,220,.10);
+padding:24px;
+
+border:
+
+1px solid rgba(70,120,170,.15);
+
+box-shadow:
+
+0 12px 25px rgba(0,0,0,.08);
+
+transition:.35s;
 
 }
+
+/* 上ライン */
+
+.station-item::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:5px;
+
+background:
+
+linear-gradient(
+90deg,
+var(--sky),
+var(--river),
+var(--forest));
+
+}
+
+/* ホバー */
 
 .station-item:hover{
 
-    transform:
-    translateY(-8px);
+transform:
 
-    box-shadow:
-    0 20px 40px rgba(60,150,220,.18);
+translateY(-8px);
 
-    border-color:#4fb7ff;
+box-shadow:
+
+0 25px 45px rgba(0,0,0,.15);
 
 }
 
+/* ==========================================
+   駅リンク
+==========================================*/
+
 .station-link{
 
-    color:#1976d2;
+display:block;
 
-    text-decoration:none;
+text-decoration:none;
 
-    display:block;
+font-size:18px;
 
-    font-weight:700;
+font-weight:700;
 
-    font-size:18px;
+color:#245277;
 
-    letter-spacing:.05em;
+transition:.3s;
+
+}
+
+.station-link::before{
+
+content:"🚉 ";
 
 }
 
 .station-link::after{
 
-    content:" →";
+content:"　›";
 
-    color:#4fb7ff;
-
-}
-
-/* =========================================
-   各駅紹介
-========================================= */
-
-.project{
-
-    margin-bottom:55px;
+color:#69a9cf;
 
 }
 
-.project h3{
+.station-link:hover{
 
-    color:#1976d2;
-
-    margin-bottom:16px;
+color:#0d73b7;
 
 }
 
-.project img{
-
-    border-radius:18px;
-
-    transition:.35s;
-
-}
-
-.project img:hover{
-
-    transform:
-    scale(1.03);
-
-}
-
-/* =========================================
-   ボタン
-========================================= */
-
-.contact-link,
-button{
-
-    display:inline-block;
-
-    padding:13px 28px;
-
-    border-radius:14px;
-
-    border:none;
-
-    cursor:pointer;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #6ed2ff,
-        #3caeff,
-        #1976d2
-    );
-
-    box-shadow:
-    0 8px 22px rgba(70,150,220,.20);
-
-    transition:.3s;
-
-}
-
-.contact-link:hover,
-button:hover{
-
-    transform:
-    translateY(-3px);
-
-    box-shadow:
-    0 14px 30px rgba(60,150,220,.30);
-
-    background:
-    linear-gradient(
-        135deg,
-        #8fe1ff,
-        #5fc8ff,
-        #2494eb
-    );
-
-}
-
-/* =========================================
-   更新履歴
-========================================= */
-
-.past-notices{
-
-    list-style:none;
-
-    margin-top:25px;
-
-}
-
-.past-notices li{
-
-    padding:18px;
-
-    margin-bottom:14px;
-
-    background:white;
-
-    border-left:6px solid #4fb7ff;
-
-    border-radius:14px;
-
-    transition:.3s;
-
-    box-shadow:
-    0 6px 16px rgba(0,0,0,.05);
-
-}
-
-.past-notices li:hover{
-
-    transform:
-    translateX(8px);
-
-    border-left-color:#1976d2;
-
-}
-
-/* =========================================
-   SNS
-========================================= */
-
-.social-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:22px;
-
-    margin-top:28px;
-
-}
-
-.social-links a{
-
-    width:55px;
-
-    height:55px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:50%;
-
-    background:white;
-
-    border:1px solid rgba(79,183,255,.18);
-
-    transition:.3s;
-
-    box-shadow:
-    0 10px 20px rgba(60,150,220,.10);
-
-}
-
-.social-links a:hover{
-
-    background:#4fb7ff;
-
-    transform:
-    translateY(-6px)
-    scale(1.08);
-
-}
-
-.social-links img{
-
-    width:30px;
-
-    height:30px;
-
-}
-
-/* =========================================
-   NEWアイコン
-========================================= */
+/* ==========================================
+   NEW
+==========================================*/
 
 .newicon{
 
-    display:inline-block;
+display:inline-flex;
 
-    margin-left:8px;
+align-items:center;
 
-    padding:4px 10px;
+justify-content:center;
 
-    border-radius:999px;
+margin-left:10px;
 
-    font-size:11px;
+padding:5px 10px;
 
-    font-weight:700;
+font-size:11px;
 
-    color:white;
+font-weight:700;
 
-    background:
-    linear-gradient(
-        135deg,
-        #4fb7ff,
-        #1976d2
-    );
+letter-spacing:.08em;
 
-    box-shadow:
-    0 5px 12px rgba(70,150,220,.25);
+color:white;
 
-    letter-spacing:.08em;
+border-radius:999px;
+
+background:
+
+linear-gradient(
+135deg,
+#ff8b35,
+#ff5050);
+
+box-shadow:
+
+0 6px 15px rgba(255,120,70,.35);
 
 }
 
-/* =========================================
-   リンク
-========================================= */
+/* ==========================================
+   Contact Button
+==========================================*/
+
+.contact-link{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:14px 32px;
+
+background:
+
+linear-gradient(
+135deg,
+var(--sky-dark),
+var(--river));
+
+color:white;
+
+font-weight:700;
+
+text-decoration:none;
+
+border-radius:999px;
+
+transition:.3s;
+
+box-shadow:
+
+0 12px 25px rgba(50,120,180,.22);
+
+}
+
+.contact-link:hover{
+
+transform:
+
+translateY(-3px);
+
+background:
+
+linear-gradient(
+135deg,
+#4cb8f3,
+#43c3d4);
+
+}
+
+/* ==========================================
+   通常リンク
+==========================================*/
 
 a{
 
-    transition:.25s;
+transition:.3s;
 
 }
 
 a:hover{
 
-    color:#1976d2;
+color:#007bc1;
 
 }
-
-
 /* ==========================================================
-   Apple Tea Studio
-   Iida Line Heritage Collection
-   Sky Blue Edition
+   style.css Ver.2
    Part3
-========================================================== */
+   Images / Button / Table / SNS
+==========================================================*/
 
-/* =========================================
-   Footer
-========================================= */
+/* ==========================================
+   画像
+==========================================*/
 
-footer{
+.station-image{
 
-    margin-top:90px;
+display:block;
 
-    background:
-    linear-gradient(
-        135deg,
-        #0d47a1,
-        #1976d2,
-        #4fc3f7,
-        #81d4fa
-    );
+width:100%;
 
-    color:white;
+margin:20px 0;
 
-    padding:60px 20px 30px;
+border-radius:18px;
 
-    box-shadow:
-    0 -8px 30px rgba(0,0,0,.12);
+border:6px solid #ffffff;
 
-}
+box-shadow:
 
-.footer-inner{
+0 15px 35px rgba(0,0,0,.18);
 
-    width:min(1100px,92%);
+transition:.4s;
 
-    margin:auto;
+background:white;
 
 }
 
-.footer-brand h2{
+.station-image:hover{
 
-    color:white;
+transform:
 
-    text-align:center;
+scale(1.03);
 
-    font-size:30px;
+box-shadow:
 
-    letter-spacing:.15em;
-
-    margin-bottom:8px;
+0 25px 50px rgba(0,0,0,.25);
 
 }
 
-.footer-brand p{
+/* 複数画像 */
 
-    color:rgba(255,255,255,.9);
+.station-content{
 
-    text-align:center;
+display:grid;
 
-    margin-bottom:28px;
+grid-template-columns:
 
-}
+repeat(auto-fit,minmax(280px,1fr));
 
-.footer-divider{
+gap:20px;
 
-    width:100%;
-
-    height:1px;
-
-    margin:30px 0;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.55),
-        transparent
-    );
+margin-top:20px;
 
 }
 
-.footer-links{
+/* ==========================================
+   ボタン
+==========================================*/
 
-    display:flex;
+button,
 
-    justify-content:center;
+.contact-link{
 
-    flex-wrap:wrap;
+cursor:pointer;
 
-    gap:28px;
+font-size:15px;
 
-    margin-bottom:30px;
+font-weight:700;
 
-}
+border:none;
 
-.footer-links a{
+outline:none;
 
-    color:white;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-    font-weight:600;
+transition:.3s;
 
 }
 
-.footer-links a:hover{
+button{
 
-    color:#e1f5fe;
+padding:14px 30px;
 
-    transform:translateY(-2px);
+border-radius:999px;
 
-}
+background:
 
-.footer-copy{
+linear-gradient(
 
-    text-align:center;
+135deg,
 
-}
+var(--sky),
 
-.footer-copy p{
+var(--river)
 
-    color:white;
+);
 
-    margin-bottom:8px;
-
-}
-
-.footer-copy small{
-
-    color:rgba(255,255,255,.75);
+color:white;
 
 }
 
-/* =========================================
-   Table
-========================================= */
+button:hover{
+
+transform:
+
+translateY(-3px);
+
+}
+
+/* ==========================================
+   テーブル
+==========================================*/
 
 table{
 
-    width:100%;
+width:100%;
 
-    border-collapse:collapse;
+border-collapse:collapse;
 
-    overflow:hidden;
+overflow:hidden;
 
-    border-radius:18px;
+border-radius:18px;
 
-    background:white;
+background:white;
 
-    box-shadow:
-    0 12px 28px rgba(70,150,220,.10);
+margin-top:25px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.08);
 
 }
 
 th{
 
-    padding:16px;
+padding:16px;
 
-    color:white;
+background:
 
-    background:
-    linear-gradient(
-        135deg,
-        #4fc3f7,
-        #2196f3,
-        #1976d2
-    );
+linear-gradient(
+
+135deg,
+
+var(--sky),
+
+var(--river)
+
+);
+
+color:white;
+
+font-weight:700;
 
 }
 
 td{
 
-    padding:14px;
+padding:15px;
 
-    border-bottom:1px solid #eef6fb;
+border-bottom:
 
-}
-
-tr:nth-child(even){
-
-    background:#f8fcff;
+1px solid rgba(0,0,0,.06);
 
 }
 
 tr:hover{
 
-    background:#eef8ff;
+background:#eef9ff;
 
 }
 
-/* =========================================
-   Fade Animation
-========================================= */
+/* ==========================================
+   更新履歴
+==========================================*/
 
-section,
-.station-item,
-.project{
+.past-notices{
 
-    animation:fadeUp .7s ease;
+list-style:none;
 
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
+margin-top:25px;
 
 }
 
-/* =========================================
-   Scrollbar
-========================================= */
+.past-notices li{
+
+background:white;
+
+padding:18px;
+
+margin-bottom:15px;
+
+border-left:
+
+5px solid var(--river);
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.past-notices li:hover{
+
+transform:
+
+translateX(6px);
+
+background:#f8fcff;
+
+}
+
+/* ==========================================
+   SNS
+==========================================*/
+
+.social-links{
+
+display:flex;
+
+gap:18px;
+
+justify-content:flex-start;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+width:56px;
+
+height:56px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:white;
+
+border-radius:50%;
+
+border:
+
+1px solid rgba(0,0,0,.08);
+
+box-shadow:
+
+0 10px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.social-links a:hover{
+
+transform:
+
+translateY(-6px);
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--sky),
+
+var(--river)
+
+);
+
+}
+
+.social-links img{
+
+width:28px;
+
+height:28px;
+
+}
+
+/* ==========================================
+   リンク共通
+==========================================*/
+
+a{
+
+transition:.3s;
+
+}
+
+a:hover{
+
+text-decoration:none;
+
+}
+
+/* ==========================================
+   スクロールバー
+==========================================*/
 
 ::-webkit-scrollbar{
 
-    width:11px;
+width:10px;
 
 }
 
 ::-webkit-scrollbar-track{
 
-    background:#edf8ff;
+background:#dff5ff;
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    border-radius:999px;
+background:
 
-    background:
-    linear-gradient(
-        #81d4fa,
-        #29b6f6,
-        #1976d2
-    );
+linear-gradient(
+
+180deg,
+
+var(--sky),
+
+var(--river)
+
+);
+
+border-radius:999px;
 
 }
 
 ::-webkit-scrollbar-thumb:hover{
 
-    background:
-    linear-gradient(
-        #64b5f6,
-        #2196f3,
-        #1565c0
-    );
+background:
+
+linear-gradient(
+
+180deg,
+
+var(--river),
+
+var(--forest)
+
+);
 
 }
 
-/* =========================================
-   Selection
-========================================= */
+/* ==========================================
+   選択色
+==========================================*/
 
 ::selection{
 
-    background:#81d4fa;
+background:#7bc8ff;
 
-    color:#003049;
+color:#fff;
+
+}
+/* ==========================================================
+   style.css Ver.2
+   Part4
+   Footer・Animation・Responsive
+==========================================================*/
+
+/* ==========================================
+   Footer
+==========================================*/
+
+footer{
+
+margin-top:90px;
+
+padding:60px 8% 35px;
+
+background:
+
+linear-gradient(
+180deg,
+#245d82 0%,
+#1f4865 45%,
+#183549 100%);
+
+color:#fff;
+
+position:relative;
+
+overflow:hidden;
 
 }
 
-/* =========================================
-   Responsive
-========================================= */
+/* 上部のレール */
 
-@media(max-width:900px){
+footer::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:10px;
+
+background:
+
+repeating-linear-gradient(
+
+90deg,
+
+#666 0 20px,
+
+#666 20px 24px,
+
+#b88d45 24px 42px,
+
+#666 42px 46px
+
+);
+
+}
+
+/* 山のシルエット */
+
+footer::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+height:180px;
+
+opacity:.08;
+
+background:
+
+url("images/mountain.svg");
+
+background-repeat:no-repeat;
+
+background-size:cover;
+
+background-position:bottom;
+
+pointer-events:none;
+
+}
+
+/* ==========================================
+   SNS
+==========================================*/
+
+footer .social-links{
+
+justify-content:flex-start;
+
+margin-bottom:30px;
+
+}
+
+footer .social-links a{
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(8px);
+
+}
+
+footer .social-links a:hover{
+
+background:white;
+
+transform:
+
+translateY(-5px);
+
+}
+
+/* ==========================================
+   Footer Text
+==========================================*/
+
+footer p{
+
+text-align:left;
+
+font-size:15px;
+
+line-height:1.9;
+
+color:#eef8ff;
+
+margin-bottom:8px;
+
+}
+
+footer p:first-of-type{
+
+padding-top:20px;
+
+border-top:
+
+1px solid rgba(255,255,255,.15);
+
+margin-top:15px;
+
+}
+
+/* Copyright */
+
+footer p:last-child{
+
+font-size:13px;
+
+color:#cfe8f8;
+
+letter-spacing:.08em;
+
+}
+
+/* ==========================================
+   全体アニメーション
+==========================================*/
+
+section{
+
+animation:
+
+fadeUp .8s ease both;
+
+}
+
+.station-item{
+
+animation:
+
+fadeUp .8s ease both;
+
+}
+
+.station-image{
+
+animation:
+
+fade .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================================
+   Hover
+==========================================*/
+
+.station-item:hover{
+
+border-color:
+
+rgba(70,140,190,.35);
+
+}
+
+section:hover{
+
+border-color:
+
+rgba(70,140,190,.22);
+
+}
+
+/* ==========================================
+   Responsive
+==========================================*/
+
+@media(max-width:1000px){
 
 .header-container{
 
-    flex-direction:column;
+flex-direction:column;
 
-    gap:16px;
+text-align:center;
 
 }
 
 .profile-item{
 
-    flex-direction:column;
+flex-direction:column;
 
-    align-items:flex-start;
+align-items:flex-start;
 
-}
-
-.station-list{
-
-    grid-template-columns:1fr 1fr;
+gap:8px;
 
 }
 
-.footer-links{
+.profile-value{
 
-    gap:18px;
+max-width:100%;
+
+text-align:left;
 
 }
 
 }
 
-@media(max-width:600px){
+/* ---------- */
+
+@media(max-width:768px){
 
 .container{
 
-    width:94%;
-
-}
-
-.header-title{
-
-    font-size:22px;
+width:95%;
 
 }
 
 section{
 
-    padding:24px;
+padding:24px;
 
 }
 
 .station-list{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
 }
 
-.footer-brand h2{
+.station-content{
 
-    font-size:24px;
-
-}
-
-.footer-links{
-
-    flex-direction:column;
-
-    gap:12px;
+grid-template-columns:1fr;
 
 }
 
-.contact-link,
-button{
+.header-title{
+
+font-size:24px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+footer{
+
+padding:45px 6% 30px;
+
+}
+
+footer .social-links{
+
+justify-content:center;
+
+}
+
+footer p{
+
+text-align:center;
+
+}
+
+}
+
+/* ---------- */
+
+@media(max-width:480px){
+
+.header-title{
+
+font-size:21px;
+
+}
+
+.back-link{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+button,
+
+.contact-link{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+
+/* ==========================================================
+   Iida Line Heritage Collection
+   style.css Ver.2
+   Part5
+   Railway Design Enhancement
+==========================================================*/
+
+
+/* ==========================================================
+   Station Sign Style
+   駅名標風デザイン
+==========================================================*/
+
+
+.station-item{
+
+    padding-top:35px;
+
+}
+
+
+.station-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:12px;
+    right:18px;
+
+    width:55px;
+    height:22px;
+
+    border-radius:4px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #fff,
+    #eaf7ff);
+
+    border:
+
+    1px solid rgba(0,0,0,.08);
+
+}
+
+
+/* 駅番号 */
+
+.station-item .station-number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    margin-bottom:12px;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--sky),
+    var(--river));
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    box-shadow:
+
+    0 8px 18px rgba(70,160,200,.3);
+
+}
+
+
+/* ==========================================================
+   Railway Line Navigation
+   路線図風
+==========================================================*/
+
+
+.line-map{
+
+    position:relative;
+
+    margin:40px auto;
+
+    padding-left:45px;
+
+}
+
+
+.line-map::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:18px;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+    180deg,
+    var(--sky),
+    var(--river),
+    var(--forest));
+
+
+    border-radius:10px;
+
+}
+
+
+.line-station{
+
+    position:relative;
+
+    margin-bottom:30px;
+
+    padding:15px 22px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+.line-station::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-38px;
+
+    top:50%;
+
+    transform:
+
+    translateY(-50%);
+
+
+    width:22px;
+
+    height:22px;
+
+
+    background:white;
+
+    border:
+
+    5px solid var(--river);
+
+
+    border-radius:50%;
+
+}
+
+
+.line-station:hover{
+
+    transform:
+
+    translateX(8px);
+
+}
+
+
+
+/* ==========================================================
+   Image Gallery
+   写真展示強化
+==========================================================*/
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(
+    auto-fit,
+    minmax(260px,1fr)
+    );
+
+    gap:25px;
+
+}
+
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:white;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+
+.gallery-item img{
 
     width:100%;
 
-}
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
 
 }
-/* =========================================
-   End
-========================================= */
+
+
+.gallery-item:hover img{
+
+    transform:
+
+    scale(1.08);
+
+}
+
+
+.gallery-item:hover{
+
+    transform:
+
+    translateY(-8px);
+
+}
+
+
+
+/* ==========================================================
+   Old Photo Mode
+   古写真資料向け
+==========================================================*/
+
+
+.old-photo{
+
+    filter:
+
+    sepia(.35)
+    contrast(1.05);
+
+    border:
+
+    8px solid #e6d5b8;
+
+    background:#f5ead8;
+
+    padding:8px;
+
+}
+
+
+.old-photo:hover{
+
+    filter:
+
+    sepia(.1)
+    contrast(1.1);
+
+}
+
+
+
+/* ==========================================================
+   Document Card
+   資料カード
+==========================================================*/
+
+
+.document-card{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ffffff,
+    #f3f8fb);
+
+
+    border-radius:20px;
+
+    padding:28px;
+
+
+    border:
+
+    1px solid rgba(70,120,170,.15);
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.08);
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.document-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+    180deg,
+    var(--wood),
+    var(--forest));
+
+
+}
+
+
+.document-card:hover{
+
+    transform:
+
+    translateY(-5px);
+
+}
+
+
+
+/* ==========================================================
+   Train Motion Decoration
+   列車走行ライン
+==========================================================*/
+
+
+.train-line{
+
+    position:relative;
+
+    height:5px;
+
+    overflow:hidden;
+
+    background:#ddd;
+
+    margin:35px 0;
+
+}
+
+
+.train-line::before{
+
+    content:"🚃";
+
+    position:absolute;
+
+    left:-60px;
+
+    top:-22px;
+
+    font-size:35px;
+
+
+    animation:
+
+    trainMove 8s linear infinite;
+
+}
+
+
+
+@keyframes trainMove{
+
+
+from{
+
+    left:-60px;
+
+}
+
+
+to{
+
+    left:110%;
+
+}
+
+
+}
+
+
+
+/* ==========================================================
+   Section Railway Label
+==========================================================*/
+
+
+.railway-label{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+    padding:8px 18px;
+
+
+    border-radius:999px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--forest),
+    var(--river));
+
+
+    color:white;
+
+
+    font-size:13px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:.08em;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+/* ==========================================================
+   Mobile Adjust
+==========================================================*/
+
+
+@media(max-width:768px){
+
+
+.gallery-item img{
+
+    height:220px;
+
+}
+
+
+.line-map{
+
+    padding-left:35px;
+
+}
+
+
+}
+
