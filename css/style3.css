@@ -2072,3 +2072,24 @@ to{
 
 }
 
+footer .kr-official{
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+/* Footer Copyright */
+footer small{
+
+    color:#ffffff;
+
+    font-size:13px;
+
+    letter-spacing:.08em;
+
+    line-height:1.8;
+
+}
+
